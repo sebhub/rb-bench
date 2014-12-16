@@ -21,6 +21,8 @@ APP_PIECES += test-rbtree-jffs2
 APP_PIECES += test-rbtree-linux
 APP_PIECES += test-rbtree-llrb
 APP_PIECES += test-rbtree-rb
+APP_PIECES += test-rbtree-rb-new
+APP_PIECES += test-rbtree-rb-old
 APP_PIECES += test-rbtree-rtems
 APP_PIECES += test-rbtree-rtems-compact
 
