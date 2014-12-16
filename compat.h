@@ -32,44 +32,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#ifdef __rtems__
-
-#include <rtems/counter.h>
-#include <rtems/bspIo.h>
-
-typedef rtems_counter_ticks ticks;
-
-#define ticks_read() rtems_counter_read()
-
-#define ticks_difference(t1, t0) rtems_counter_difference(t1, t0)
-
-#define ticks_to_nanoseconds(t) rtems_counter_ticks_to_nanoseconds(t)
-
-#else /* __rtems__ */
-
-#include <sys/time.h>
-#include <sys/resource.h>
-#include <stdio.h>
-
-#define printk printf
-
-typedef uint64_t ticks;
-
-static inline uintptr_t ticks_read(void)
-{
-	struct rusage r;
-
-	getrusage(RUSAGE_SELF, &r);
-
-	return r.ru_utime.tv_sec * 1000000000ULL + r.ru_utime.tv_usec * 1000ULL;
-}
-
-#define ticks_difference(t1, t0) ((t1) - (t0))
-
-#define ticks_to_nanoseconds(t) (t)
-
-#endif /* __rtems__ */
-
 #ifndef __inline
 #define __inline inline
 #endif
