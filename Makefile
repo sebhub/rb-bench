@@ -41,9 +41,9 @@ clean:
 
 REPORTS = $(wildcard reports/*.xml)
 
-images: $(REPORTS:%.xml=%.svg)
+images: $(REPORTS:%.xml=%.png)
 
-%.svg: %.xml
+%.png: %.xml
 	python plot.py $< $@
 
 %.d:

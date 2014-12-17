@@ -19,8 +19,8 @@ diagrams.
 
 Some sample reports:
 
-![Altera Cyclone V](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-altcycv_devkit.svg)
-![Linux](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-linux.svg)
-![NGMP](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-ngmp.svg)
-![Freescale P1020RDB](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-qoriq_p1020rdb.svg)
-![Xilinx Zynq](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-xilinx_zynq_zc702.svg)
+![Altera Cyclone V](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-altcycv_devkit.png)
+![Linux](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-linux.png)
+![NGMP](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-ngmp.png)
+![Freescale P1020RDB](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-qoriq_p1020rdb.png)
+![Xilinx Zynq](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-xilinx_zynq_zc702.png)
