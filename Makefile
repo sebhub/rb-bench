@@ -39,6 +39,13 @@ $(APP): $(APP_O_FILES)
 clean:
 	rm -f $(APP) $(APP_O_FILES) $(APP_DEP_FILES)
 
+REPORTS = $(wildcard reports/*.xml)
+
+images: $(REPORTS:%.xml=%.svg)
+
+%.svg: %.xml
+	python plot.py $< $@
+
 %.d:
 	touch $@
 

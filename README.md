@@ -16,3 +16,11 @@ The following implementations are tested
 
 The test program produces an XML file.  Use the plot.py script to print some
 diagrams.
+
+Some sample reports:
+
+![Altera Cyclone V](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-altcycv_devkit.svg)
+![Linux](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-linux.svg)
+![NGMP](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-ngmp.svg)
+![Freescale P1020RDB](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-qoriq_p1020rdb.svg)
+![Xilinx Zynq](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-xilinx_zynq_zc702.svg)

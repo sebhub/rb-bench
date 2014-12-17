@@ -29,11 +29,15 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+import sys
 import libxml2
 from libxml2 import xmlNode
 import matplotlib.pyplot as plt
-doc = libxml2.parseFile("test.xml")
+doc = libxml2.parseFile(sys.argv[1])
+root = doc.children
 ctx = doc.xpathNewContext()
+
+test = 'SmallSetLinear'
 
 def getImpl(n):
 	return n.prop("implementation");
@@ -43,15 +47,17 @@ impls = map(getImpl, ctx.xpathEval("/RBTestCollection/RBTest"))
 def getNodeCountAndDuration(n):
 	return [n.prop("nodeCount"), n.prop("duration")]
 
-plt.title("red-black tree test runs")
-plt.xlabel('node count')
-plt.ylabel('test duration [ns]')
+cmPerInch = 2.54
+plt.figure(figsize = (30.0 / cmPerInch, 30.0 / 1.618 / cmPerInch))
+plt.title("Red-Black Tree Benchmark: " + test + "\nPlatform: " + root.prop("platform") + "\nCompiler: " + root.prop("compiler"))
+plt.xlabel('Node Count')
+plt.ylabel('Test Duration [s]')
 
 for i in impls:
-	xy = map(getNodeCountAndDuration, ctx.xpathEval("/RBTestCollection/RBTest[@implementation='" + i + "']/SmallSetLinear/Sample"))
-	x = [x[0] for x in xy]
-	y = [y[1] for y in xy]
+	xy = map(getNodeCountAndDuration, ctx.xpathEval("/RBTestCollection/RBTest[@implementation='" + i + "']/" + test + "/Sample"))
+	x = [int(x[0]) for x in xy]
+	y = [int(y[1]) / 1e9 for y in xy]
 	plt.plot(x, y, label = i)
 
-plt.legend()
-plt.show()
+plt.legend(fontsize = 10, bbox_to_anchor=(0.3, 0.9))
+plt.savefig(sys.argv[2])
