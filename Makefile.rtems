@@ -1,4 +1,8 @@
-RTEMS_MAKEFILE_PATH = /opt/rtems-4.11/arm-rtems4.11/xilinx_zynq_zc702
+#RTEMS_MAKEFILE_PATH = /opt/rtems-4.11/arm-rtems4.11/xilinx_zynq_zc702
+#RTEMS_MAKEFILE_PATH = /opt/rtems-4.11/arm-rtems4.11/altcycv_devkit
+#RTEMS_MAKEFILE_PATH = /opt/rtems-4.11/sparc-rtems4.11/ngmp
+#RTEMS_MAKEFILE_PATH = /opt/rtems-4.11/m68k-rtems4.11/m5484FireEngine
+RTEMS_MAKEFILE_PATH = /opt/rtems-4.11/powerpc-rtems4.11/qoriq_p1020rdb
 
 include $(RTEMS_MAKEFILE_PATH)/make/target.cfg
 
