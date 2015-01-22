@@ -36,8 +36,10 @@
   #define PLATFORM "Xilinx Zynq, Cortex-A9 MPCore"
 #elif defined(LIBBSP_POWERPC_MPC55XXEVB_BSP_H)
   #define PLATFORM "Freescale MPC5564, e200z6"
-#elif defined(LIBBSP_POWERPC_QORIQ_BSP_H)
+#elif QORIQ_CHIP_VARIANT == QORIQ_CHIP_P1020
   #define PLATFORM "Freescale P1020, e500v2"
+#elif QORIQ_CHIP_VARIANT == QORIQ_CHIP_T4240
+  #define PLATFORM "Freescale T4240, e6500"
 #elif defined(__GENMCF548X_BSP_H)
   #define PLATFORM "Freescale MCF5484, Coldfire V4e"
 #elif defined(LEON3)

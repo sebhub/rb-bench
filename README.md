@@ -21,6 +21,7 @@ diagrams.
 
 Some sample reports:
 
+![Freescale T4240RDB](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-qoriq_t4240rdb.png)
 ![Freescale P1020RDB](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-qoriq_p1020rdb.png)
 ![Altera Cyclone V](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-altcycv_devkit.png)
 ![Xilinx Zynq](https://raw.githubusercontent.com/sebhub/rb-bench/master/reports/test-xilinx_zynq_zc702.png)
