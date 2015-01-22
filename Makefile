@@ -11,6 +11,7 @@ APP_PIECES += rbtree-rtems-next
 APP_PIECES += test-rbtree-boost
 APP_PIECES += test-rbtree-bsd
 APP_PIECES += test-rbtree-bsd-for-rtems
+APP_PIECES += test-rbtree-chain
 APP_PIECES += test-rbtree-ec
 APP_PIECES += test-rbtree-jffs2
 APP_PIECES += test-rbtree-linux

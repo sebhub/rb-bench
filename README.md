@@ -5,6 +5,7 @@ The following implementations are tested
 * [Boost](http://www.boost.org/doc/libs/1_57_0/doc/html/boost/intrusive/rbtree.html)
 * [BSD](https://github.com/freebsd/freebsd/blob/master/sys/sys/tree.h)
 * BSD for RTEMS - Maybe the next implementation for RTEMS
+* [Chain](https://github.com/RTEMS/rtems/blob/master/cpukit/score/include/rtems/score/chain.h)
 * [Eternally Confuzzled](http://eternallyconfuzzled.com/tuts/datastructures/jsw_tut_rbtree.aspx)
 * [Jason Evans - Newer](http://www.canonware.com/download/rb/rb_newer/)
 * [Jason Evans - New](http://www.canonware.com/download/rb/rb_new/)
