@@ -37,7 +37,7 @@ doc = libxml2.parseFile(sys.argv[1])
 root = doc.children
 ctx = doc.xpathNewContext()
 
-test = 'SmallSetLinear'
+cmPerInch = 2.54
 
 def getImpl(n):
 	return n.prop("implementation");
@@ -47,17 +47,21 @@ impls = map(getImpl, ctx.xpathEval("/RBTestCollection/RBTest"))
 def getNodeCountAndDuration(n):
 	return [n.prop("nodeCount"), n.prop("duration")]
 
-cmPerInch = 2.54
-plt.figure(figsize = (30.0 / cmPerInch, 30.0 / 1.618 / cmPerInch))
-plt.title("Red-Black Tree Benchmark: " + test + "\nPlatform: " + root.prop("platform") + "\nCompiler: " + root.prop("compiler"))
-plt.xlabel('Node Count')
-plt.ylabel('Test Duration [s]')
+def plotTest(test):
+	plt.title("Red-Black Tree Benchmark: " + test + "\nPlatform: " + root.prop("platform") + ", " + root.prop("compiler"))
+	plt.xlabel('Node Count')
+	plt.ylabel('Test Duration [s]')
+	for i in impls:
+		xy = map(getNodeCountAndDuration, ctx.xpathEval("/RBTestCollection/RBTest[@implementation='" + i + "']/" + test + "/Sample"))
+		x = [int(x[0]) for x in xy]
+		y = [int(y[1]) / 1e9 for y in xy]
+		plt.plot(x, y, label = i)
+	plt.legend(fontsize = 10, bbox_to_anchor=(0.3, 0.9))
 
-for i in impls:
-	xy = map(getNodeCountAndDuration, ctx.xpathEval("/RBTestCollection/RBTest[@implementation='" + i + "']/" + test + "/Sample"))
-	x = [int(x[0]) for x in xy]
-	y = [int(y[1]) / 1e9 for y in xy]
-	plt.plot(x, y, label = i)
-
-plt.legend(fontsize = 10, bbox_to_anchor=(0.3, 0.9))
+plt.figure(figsize = (30.0 / cmPerInch, 2 * 30.0 / 1.618 / cmPerInch))
+plt.title('x')
+plt.subplot(211)
+plotTest('SmallSetLinear');
+plt.subplot(212)
+plotTest('SmallSetRandomOps');
 plt.savefig(sys.argv[2])
