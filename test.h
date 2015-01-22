@@ -360,6 +360,8 @@ void test_rbtree_boost(void);
 
 void test_rbtree_bsd(void);
 
+void test_rbtree_bsd_for_rtems(void);
+
 void test_rbtree_ec(void);
 
 void test_rbtree_jffs2(void);

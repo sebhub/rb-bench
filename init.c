@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 Sebastian Huber <sebhub@gmail.com>
+ * Copyright (c) 2014-2015 Sebastian Huber <sebhub@gmail.com>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -69,6 +69,7 @@ static void run(void)
   test_rbtree_rb();
   test_rbtree_jffs2();
   test_rbtree_bsd();
+  test_rbtree_bsd_for_rtems();
   test_rbtree_rb_old();
   test_rbtree_linux();
 
