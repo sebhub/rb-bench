@@ -41,7 +41,7 @@ GCCFLAGS = -I . -B $(INSTALL_BASE) -specs bsp_specs -qrtems
 
 CFLAGS += $(DEPFLAGS) $(GCCFLAGS) -O2
 
-CXXFLAGS += $(CFLAGS)
+CXXFLAGS += $(CFLAGS) -std=gnu++11
 
 all: $(APP)
 

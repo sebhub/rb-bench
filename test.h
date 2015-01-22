@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 Sebastian Huber <sebhub@gmail.com>
+ * Copyright (c) 2014-2015 Sebastian Huber <sebhub@gmail.com>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -35,6 +35,19 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifdef __rtems__
+
+#include <rtems.h>
+#include <rtems/bspIo.h>
+
+#else /* __rtems__ */
+
+#include <sys/time.h>
+#include <sys/resource.h>
+#include <stdio.h>
+
+#endif /* __rtems__ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
@@ -43,16 +56,9 @@ typedef uint64_t ticks;
 
 #ifdef __rtems__
 
-#include <rtems.h>
-#include <rtems/bspIo.h>
-
 #define ticks_read() rtems_clock_get_uptime_nanoseconds()
 
 #else /* __rtems__ */
-
-#include <sys/time.h>
-#include <sys/resource.h>
-#include <stdio.h>
 
 #define printk printf
 
