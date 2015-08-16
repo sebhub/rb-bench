@@ -73,6 +73,7 @@ static void run(void)
   test_rbtree_rtems();
   test_rbtree_boost();
   test_rbtree_rb();
+  test_bheap();
   test_rbtree_jffs2();
   test_rbtree_bsd();
   test_rbtree_bsd_for_rtems();

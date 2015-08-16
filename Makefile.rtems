@@ -19,6 +19,7 @@ APP_PIECES += rbtree-rtems-compact-next
 APP_PIECES += rbtree-rtems-extract
 APP_PIECES += rbtree-rtems-insert
 APP_PIECES += rbtree-rtems-next
+APP_PIECES += test-bheap
 APP_PIECES += test-rbtree-boost
 APP_PIECES += test-rbtree-bsd
 APP_PIECES += test-rbtree-bsd-for-rtems

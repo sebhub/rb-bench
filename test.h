@@ -356,6 +356,8 @@ static inline void test(
   printk("\t</RBTest>\n");
 }
 
+void test_bheap(void);
+
 void test_rbtree_boost(void);
 
 void test_rbtree_bsd(void);
