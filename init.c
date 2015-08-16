@@ -40,10 +40,14 @@
   #define PLATFORM "Freescale P1020, e500v2"
 #elif QORIQ_CHIP_VARIANT == QORIQ_CHIP_T4240
   #define PLATFORM "Freescale T4240, e6500"
-#elif defined(__GENMCF548X_BSP_H)
+#elif defined(__GENMCF548X_BSP_H) || defined(LIBBSP_M68K_GENMCF548X_BSP_H)
   #define PLATFORM "Freescale MCF5484, Coldfire V4e"
-#elif defined(LEON3)
-  #define PLATFORM "Aeroflex Gaisler NGMP, LEON4FT"
+#elif defined(LEON3) || defined(LIBBSP_SPARC_LEON3_BSP_H)
+  #define PLATFORM "Cobham Gaisler NGMP, LEON4FT"
+#elif defined(LIBBSP_SPARC_ERC32_BSP_H)
+  #define PLATFORM "SIS, GDB"
+#else
+  #error "unknown BSP"
 #endif
 
 #else /* __rtems__ */
