@@ -42,7 +42,7 @@ cmPerInch = 2.54
 def getImpl(n):
 	return n.prop("implementation");
 
-impls = map(getImpl, ctx.xpathEval("/RBTestCollection/RBTest"))
+impls = list(map(getImpl, ctx.xpathEval("/RBTestCollection/RBTest")))
 
 def getNodeCountAndDuration(n):
 	return [n.prop("nodeCount"), n.prop("duration")]
@@ -52,9 +52,9 @@ def plotTest(test):
 	plt.xlabel('Node Count')
 	plt.ylabel('Test Duration [s]')
 	for i in impls:
-		xy = map(getNodeCountAndDuration, ctx.xpathEval("/RBTestCollection/RBTest[@implementation='" + i + "']/" + test + "/Sample"))
-		x = [int(x[0]) for x in xy]
-		y = [int(y[1]) / 1e9 for y in xy]
+		xy = list(map(getNodeCountAndDuration, ctx.xpathEval("/RBTestCollection/RBTest[@implementation='" + i + "']/" + test + "/Sample")))
+		x = [int(n[0]) for n in xy]
+		y = [int(n[1]) / 1e9 for n in xy]
 		plt.plot(x, y, label = i)
 	plt.legend(fontsize = 10, bbox_to_anchor=(0.3, 0.9))
 
