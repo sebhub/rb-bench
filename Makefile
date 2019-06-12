@@ -22,6 +22,7 @@ APP_PIECES += test-rbtree-rb-new
 APP_PIECES += test-rbtree-rb-old
 APP_PIECES += test-rbtree-rtems
 APP_PIECES += test-rbtree-rtems-compact
+APP_PIECES += test-rbtree-tailq
 
 APP_O_FILES = $(APP_PIECES:%=%.o)
 APP_DEP_FILES = $(APP_PIECES:%=%.d)

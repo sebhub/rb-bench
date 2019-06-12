@@ -80,6 +80,7 @@ static void run(void)
   test_rbtree_rb_old();
   test_rbtree_linux();
   test_rbtree_chain();
+  test_rbtree_tailq();
 
   printk("</RBTestCollection>\n");
 }

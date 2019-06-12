@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2015 Sebastian Huber <sebhub@gmail.com>
+ * Copyright (C) 2014, 2019 Sebastian Huber <sebhub@gmail.com>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -383,6 +383,8 @@ void test_rbtree_rb_old(void);
 void test_rbtree_rtems(void);
 
 void test_rbtree_rtems_compact(void);
+
+void test_rbtree_tailq(void);
 
 #ifdef __cplusplus
 }
